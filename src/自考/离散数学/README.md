@@ -1,57 +1,46 @@
-# 个体词
+## 个体词
 
-![image-20240317111121462](/Users/zoey/Library/Application%20Support/typora-user-images/image-20240317111121462.png)
+![Snipaste_2024-03-17_15-03-53](../../images/Snipaste_2024-03-17_15-03-53.png)
 
-![image-20240316191747254](https://raw.githubusercontent.com/zhangyinyuan/public-img/master/image-20240316191747254.png)ss
-
----
-
-![image-20240316191910518](/Users/zoey/Library/Application%20Support/typora-user-images/image-20240316191910518.png)
-
-## 简单总结
-
-![image-20240316193510136](https://raw.githubusercontent.com/zhangyinyuan/public-img/master/image-20240316193510136.png)
-
-# 谓词
-
-![image-20240316193800496](/Users/zoey/Library/Application Support/typora-user-images/image-20240316193800496.png)
-
----
-
-![image-20240316194748256](https://raw.githubusercontent.com/zhangyinyuan/public-img/master/image-20240316194748256.png)
-
-##  总结
-
-![image-20240316195727162](https://raw.githubusercontent.com/zhangyinyuan/public-img/master/image-20240316195727162.png)
-
-# 量词
-
-## 量词的引入
-
-![image-20240316200656918](https://raw.githubusercontent.com/zhangyinyuan/public-img/master/image-20240316200656918.png)
-
-## 转换：更准确的表达
-
-![image-20240316201443720](https://raw.githubusercontent.com/zhangyinyuan/public-img/master/image-20240316201443720.png)
-
----
-
-![image-20240316202027030](https://raw.githubusercontent.com/zhangyinyuan/public-img/master/image-20240316202027030.png)
-
----
-
-## 谓词相关的真值确认
-
-![image-20240316202736688](https://raw.githubusercontent.com/zhangyinyuan/public-img/master/image-20240316202736688.png)
 
 ---
 
 
 
-测试提交
+![Snipaste_2024-03-17_15-09-13](../../images/Snipaste_2024-03-17_15-09-13.png)
 
-![test](test.png)
+## 谓词
+
+![image-20240316193800496](../../images/image-20240316193800496.png)
 
 
+---
 
-![project-root](../../project-root.png)
+
+![Snipaste_2024-03-17_15-09-13](../../images/Snipaste_2024-03-17_15-09-13.png)
+
+## 复合命题的谓词符号化
+
+![image-20240317153900159](../../images/image-20240317153900159.png)
+
+### 总结
+
+![image-20240317154601408](../../images/image-20240317154601408.png)
+
+ 
+
+## 量词
+
+![image-20240317163328581](../../images/image-20240317163328581.png)
+
+---
+
+![image-20240317164001835](../../images/image-20240317164001835.png)
+
+---
+
+![image-20240317164245933](../../images/image-20240317164245933.png)
+
+---
+
+![image-20240317172252420](../../images/image-20240317172252420.png)
