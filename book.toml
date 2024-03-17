@@ -4,7 +4,7 @@
 description = "The example book covers examples."
 
 [build]
-#build-dir = "my-example-book"
+build-dir = "docs"
 create-missing = false
 
 [preprocessor.index]
@@ -15,6 +15,8 @@ create-missing = false
 additional-css = ["custom.css"]
 mathjax-support = true
 highlight-theme = "github"
+site-url = "/study-note/"
+
 
 
 [output.html.search]
