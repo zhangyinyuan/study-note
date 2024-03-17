@@ -1,0 +1,24 @@
+[book]
+#title = "Example book"
+#author = "John Doe"
+description = "The example book covers examples."
+
+[build]
+#build-dir = "my-example-book"
+create-missing = false
+
+[preprocessor.index]
+
+[preprocessor.links]
+
+[output.html]
+additional-css = ["custom.css"]
+mathjax-support = true
+highlight-theme = "github"
+
+
+[output.html.search]
+limit-results = 15
+
+[output.html.playground.markdown]
+image_directory = "images"
