@@ -1,7 +1,8 @@
 # rclone同步文件到Google云盘
 
 ## 安装unzip
-> rclone安装用的到unzip
+rclone安装用的到unzip
+
 ```
 apt install -y unzip
 ```
@@ -12,7 +13,8 @@ apt install -y fuse3
 ```
 
 ## 安装socat (可选)
-> socat 用于后续配置的时候, 代理127.0.0.1上的端口.也可以用其他代理工具代理
+socat 用于后续配置的时候, 代理127.0.0.1上的端口.也可以用其他代理工具代理
+
 ```
 apt install -y socat 
 ```
@@ -47,6 +49,9 @@ socat TCP-LISTEN:1234,fork,reuseaddr TCP:127.0.0.1:53682
 代理成功后, 在桌面端浏览器访问, 访问完成,授权登录后,Linux终端会提示Success,即完成了配置
 
 ## 创建Service, 启动挂载
+
+需要特别注意的是: **rclone mount 每次挂载后,总是用云盘的数据覆盖本地的挂载文件夹, 所以云盘上不存在,但是存在于本地挂载文件夹/google_drive_local下的数据一定要先做备份,避免覆盖丢失**
+
 vim /etc/systemd/system/rclone-mount.service 文件内容如下
 ```
 [Unit]
