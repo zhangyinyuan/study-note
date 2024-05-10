@@ -75,4 +75,17 @@ sudo systemctl daemon-reload
 sudo systemctl start rclone-mount.service
 sudo systemctl enable rclone-mount.service
 ```
+## 创建备份脚本
+vim /usr/local/bin/vps_backup 内容如下
+```
+cd / && tar -zcvf app.tar.gz /app/ && mv app.tar.gz /google_drive_local/
+```
+赋予执行权限```chmod +x vim /usr/local/bin/vps_backup```
+
+## 编写定时任务
+执行```crontab -e```打开定时任务配置文件,
+增加以下内容
+```
+*/30 * * * *  /usr/local/bin/vps_backup
+```
 
