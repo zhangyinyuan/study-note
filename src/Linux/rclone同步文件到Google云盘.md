@@ -40,9 +40,9 @@ rclone config
 
 如下,将服务器上的127.0.0.1的xxxx端口映射到Linux公网IP上的1234端口
 ```
-socat TCP-LISTEN:xxxx,fork,reuseaddr TCP:Linux本机外网IP:1234
+#如 控制台这样提示的时候, 使用下面命令 2024/05/10 01:38:21 NOTICE: If your browser doesn't open automatically go to the following link: http://127.0.0.1:53682/auth?state=Czs9IR66wt5eLQYQtlogbQ
+socat TCP-LISTEN:1234,fork,reuseaddr TCP:127.0.0.1:53682
 ```
-本机外网IP可以通过 ```curl ipinfo.io```查询到
 
 代理成功后, 在桌面端浏览器访问, 访问完成,授权登录后,Linux终端会提示Success,即完成了配置
 
