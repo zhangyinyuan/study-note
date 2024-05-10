@@ -1,8 +1,9 @@
 # rclone同步文件到Google云盘
 
-## 安装rclone
+## 安装unzip
+> rclone安装用的到unzip
 ```
-curl https://rclone.org/install.sh | sudo bash
+apt install -y unzip
 ```
 
 ## 安装fuse3
@@ -14,6 +15,11 @@ apt install -y fuse3
 > socat 用于后续配置的时候, 代理127.0.0.1上的端口.也可以用其他代理工具代理
 ```
 apt install -y socat 
+```
+
+## 安装rclone
+```
+curl https://rclone.org/install.sh | sudo bash
 ```
 
 ## 创建本地文件夹,用于同步远程
