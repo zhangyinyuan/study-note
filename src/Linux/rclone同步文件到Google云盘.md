@@ -80,7 +80,7 @@ vim /usr/local/bin/vps_backup 内容如下
 ```
 cd / && tar -zcvf app.tar.gz /app/ && mv app.tar.gz /google_drive_local/
 ```
-赋予执行权限```chmod +x vim /usr/local/bin/vps_backup```
+赋予执行权限```chmod +x /usr/local/bin/vps_backup```
 
 ## 编写定时任务
 执行```crontab -e```打开定时任务配置文件,
