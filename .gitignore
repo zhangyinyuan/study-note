@@ -1,4 +1,5 @@
 book
-docs
+docs/*
+!docs/CNAME
 .idea
 .DS_Store
