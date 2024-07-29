@@ -1,5 +1,5 @@
 book
 docs/*
-!docs/CNAME
+#!docs/CNAME
 .idea
 .DS_Store
