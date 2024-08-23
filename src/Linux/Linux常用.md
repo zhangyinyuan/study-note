@@ -32,6 +32,33 @@ server {
 }
 
 ```
+## Nginx Docker 部署
+创建网络
+```
+docker network create --driver=bridge --subnet=172.16.238.0/24 --gateway=172.16.238.1 my_docker_network
+```
+
+```
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:1.21.1
+    container_name: nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /app/docker/nginx/nginx:/etc/nginx
+      - /root/.acme.sh/*.nguone.eu.org_ecc/fullchain.cer:/etc/nginx/ssl/vaultwarden.crt:ro
+      - /root/.acme.sh/*.nguone.eu.org_ecc/*.nguone.eu.org.key:/etc/nginx/ssl/vaultwarden.key:ro     
+    networks:
+      - my_docker_network
+
+networks:
+  my_docker_network:
+    external: true
+```
 
 ### Nginx https 配置
 当前nginx版本
