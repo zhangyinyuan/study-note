@@ -5,3 +5,8 @@
 ```
 sed -i 's/stretch/buster/g' /etc/apt/sources.list
 ```
+
+## 查看指定容器的近10条日志
+```
+docker logs --tail 10 -f mariadb1
+```
