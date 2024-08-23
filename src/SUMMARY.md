@@ -5,6 +5,7 @@
   - [Docker]()
     - [docker-composse.yml收录](./Linux/Docker/docker-composse.yml收录)  
   - [Fail2Ban实战](./Linux/Fail2Ban实战.md)
+  - [Linux常用](./Linux/Linux常用.md)
 - [自考](./自考/README.md)
   - [离散数学](./自考/离散数学/README.md)
     - [错题记录](./自考/离散数学/错题记录.md) 
