@@ -40,4 +40,4 @@
 - [SQL]()
   - [MySQL](./SQL/MySQL/常用语句.md)
 - [Java]()
-  - [Java 8 Stream API](./Java/Java8StreamAPI/removeIf.md)
+  - [Java 8 Stream API](./Java/Java8StreamAPI/Stream之removeIf.md)
