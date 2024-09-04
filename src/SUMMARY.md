@@ -40,5 +40,7 @@
 - [SQL]()
   - [MySQL](./SQL/MySQL/常用语句.md)
 - [Java]()
+  - [Java基础]()
+    - [易错点](./Java/Java基础/易错点.md)
   - [Java 8 Stream API]()
     - [Stream之removeIf](./Java/Java8StreamAPI/removeIf.md)
