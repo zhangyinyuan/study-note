@@ -119,3 +119,10 @@ exec bash
   - 当你修改了 ~/.bashrc 或其他 shell 配置文件（如 ~/.bash_profile）后，使用 exec bash 可以使这些更改立即生效，而无需重新登录或重启终端
 - **刷新环境**
   - 有时需要重新加载环境变量或 shell 配置时，exec bash 会刷新当前 shell 的所有设置，使得新的环境变量或配置被加载
+
+## 重置终端root@后的别名.
+```
+# 重置PS1
+echo "export PS1='[\u@\h \W]\$ '" >> ~/.bashrc && exec bash
+```
+
