@@ -109,3 +109,13 @@ pgrep -f kafka | xargs kill -9
 - 确保匹配准确：确认 pgrep -f kafka 只会匹配到 Kafka 进程，避免误杀其他重要进程。
 - 检查进程：在执行命令前，可以运行 pgrep -f kafka 先查看将会被杀掉的进程。
 - 这种方式是一条命令的解决方案，但请务必在执行之前确认对系统的影响。
+
+## 在不关闭shell的情况下重新启动Bash Shell
+```
+exec bash
+```
+**主要作用**
+- **应用配置更改**
+  - 当你修改了 ~/.bashrc 或其他 shell 配置文件（如 ~/.bash_profile）后，使用 exec bash 可以使这些更改立即生效，而无需重新登录或重启终端
+- **刷新环境**
+  - 有时需要重新加载环境变量或 shell 配置时，exec bash 会刷新当前 shell 的所有设置，使得新的环境变量或配置被加载
