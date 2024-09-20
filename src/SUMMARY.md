@@ -44,4 +44,5 @@
     - [易错点](./Java/Java基础/易错点.md)
   - [Java 8 Stream API]()
     - [Stream之removeIf](./Java/Java8StreamAPI/removeIf.md)
+    - [Stream之map](./Java/Java8StreamAPI/map.md)
 - [小技巧](./小技巧.md)
