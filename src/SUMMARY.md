@@ -14,6 +14,8 @@
     - [ufw](./Linux/防火墙/ufw.md)
   - [journalctl使用]()
     - [journalctl查看ssh连接日志](./Linux/journalctl/journalctl查看ssh连接日志.md)
+  - [Linux创建完整用户](./Linux/Linux创建完整用户.md)
+  - [Linux历史记录](./Linux/Linux历史记录.md)
 - [自考](./自考/README.md)
   - [离散数学](./自考/离散数学/README.md)
     - [错题记录](./自考/离散数学/错题记录.md) 
