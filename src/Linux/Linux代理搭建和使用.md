@@ -43,3 +43,23 @@ http_access deny clientdate worktime
 export http_proxy=http://instance1_ip:8087
 export https_proxy=http://instance1_ip:8087
 ```
+
+
+## docker使用代理
+```
+sudo mkdir -p /etc/systemd/system/docker.service.d
+sudo nano /etc/systemd/system/docker.service.d/http-proxy.conf
+```
+`http-proxy.conf`内容如下:
+```
+[Service]
+Environment="HTTP_PROXY=http://instance1_ip:8087"
+Environment="HTTPS_PROXY=http://instance1_ip:8087"
+Environment="NO_PROXY=localhost,127.0.0.1"
+```
+
+重载系统守护进程并重启 Docker 服务
+```
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
