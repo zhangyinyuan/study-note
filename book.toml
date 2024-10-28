@@ -28,3 +28,13 @@ image_directory = "images"
 
 [output.html.math]
 enable = true
+
+[output.html.playground]
+editable = true
+
+[book.preprocessors]
+search = { name = "mdbook-search" }
+
+
+[preprocessor.search]
+language = "zh"
