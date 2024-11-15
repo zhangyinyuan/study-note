@@ -14,12 +14,12 @@ mathjax = true
 [preprocessor.links]
 
 [output.html]
-additional-css = ["custom.css"]
 mathjax-support = true
 highlight-theme = "github"
 site-url = "/study-note/"
 mathjax = true
 additional-js = ["assets/js/MathJax.js"]
+additional-css = ["assets/css/custom.css"]
 
 
 [output.html.search]
