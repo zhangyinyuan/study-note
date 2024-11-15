@@ -1,0 +1,7 @@
+.content main {
+    margin-inline-start: unset !important;
+    margin-inline-end: unset !important;
+    max-width: unset !important;
+    width: unset !important;
+    padding: 100px;
+}
