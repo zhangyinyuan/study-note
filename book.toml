@@ -2,6 +2,7 @@
 #title = "Example book"
 #author = "John Doe"
 description = "The example book covers examples."
+language = "zh-Hans"
 
 [build]
 build-dir = "docs"
@@ -34,7 +35,3 @@ editable = true
 
 [book.preprocessors]
 search = { name = "mdbook-search" }
-
-
-[preprocessor.search]
-language = "zh"
