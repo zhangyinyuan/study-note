@@ -18,6 +18,8 @@ additional-css = ["custom.css"]
 mathjax-support = true
 highlight-theme = "github"
 site-url = "/study-note/"
+mathjax = true
+
 
 
 
