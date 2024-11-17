@@ -1,6 +1,6 @@
 # UML 
 
-内容来自哔哩哔哩 【「软件设计师」 上午题 #8 UML】https://www.bilibili.com/video/BV1a44y1K7HH?p=17&vd_source=9b8c66469d7ef16dfa8f33c398331cdb
+内容来自哔哩哔哩 【「软件设计师」 上午题 #8 UML】[https://www.bilibili.com/video/BV1a44y1K7HH?p=17&vd_source=9b8c66469d7ef16dfa8f33c398331cdb](https://www.bilibili.com/video/BV1a44y1K7HH?p=17&vd_source=9b8c66469d7ef16dfa8f33c398331cdb)
 
 2024年11月16日22:14
 
@@ -31,6 +31,10 @@
 ---
 
 ![image-20241117105106052](../../images/image-20241117105106052.png)
+
+---
+
+![image-20241117105637262](../../images/image-20241117105637262.png)
 
 ---
 
