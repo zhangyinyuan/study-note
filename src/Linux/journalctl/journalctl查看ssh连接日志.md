@@ -34,3 +34,12 @@ Oct 16 06:10:01 amd2 sshd[7597]: Connection reset by invalid user admin 154.47.2
 即 用户输入的用户名还未通过认证程序校验，系统已经发现这是一个无效用户并且连接已被重置
 
 
+## 删除所有超过 1 秒的日志
+```
+sudo journalctl --vacuum-time=1s
+```
+
+## 清空日志文件（彻底清除）
+```
+sudo rm -rf /var/log/journal/*
+```
