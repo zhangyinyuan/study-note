@@ -3,3 +3,4 @@ docs/*
 !docs/CNAME
 .idea
 .DS_Store
+.vscode
