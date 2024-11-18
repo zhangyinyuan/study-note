@@ -1,0 +1,34 @@
+<mxfile host="65bd71144e">
+    <diagram id="3_BdU1p9mRcINwArg4m9" name="第 1 页">
+        <mxGraphModel dx="879" dy="427" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="5" value="吃饭" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="130" y="160" width="140" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="喝水" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="130" y="260" width="140" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="张嘴" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="370" y="210" width="140" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="endArrow=open;startArrow=none;endFill=0;startFill=0;endSize=8;html=1;verticalAlign=bottom;dashed=1;labelBackgroundColor=none;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="7">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="270" y="200" as="sourcePoint"/>
+                        <mxPoint x="430" y="200" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="10" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="endArrow=open;startArrow=none;endFill=0;startFill=0;endSize=8;html=1;verticalAlign=bottom;dashed=1;labelBackgroundColor=none;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="6" target="7">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="280" y="210" as="sourcePoint"/>
+                        <mxPoint x="361.0442502103224" y="229.6982552594534" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="&lt;br&gt;包含关系: 吃饭和喝水包含了张嘴&lt;br&gt;&lt;br&gt;吃饭用例和喝水用例，一定包含了张嘴用例，&lt;font color=&quot;#ff0808&quot;&gt;即执行吃饭和喝水用例前，一定执行了&lt;br&gt;张嘴用例&lt;/font&gt;。换言之，被包含的用例“张嘴” 是&lt;br&gt;吃饭和喝水用例的&lt;font color=&quot;#ff2200&quot;&gt;&lt;b&gt;前提&lt;/b&gt;&lt;/font&gt;" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="539" y="160" width="230" height="120" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
