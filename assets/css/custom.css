@@ -1,7 +1,42 @@
 .content main {
-    margin-inline-start: unset !important;
-    margin-inline-end: unset !important;
-    max-width: unset !important;
-    width: unset !important;
-    padding: 100px;
+  margin-inline-start: unset !important;
+  margin-inline-end: unset !important;
+  max-width: unset !important;
+  width: unset !important;
+  padding-left: 90px;
+  padding-right: 90px;
+}
+
+/* 自定义表格样式 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+table th,
+table td {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table th {
+  background-color: #4caf50; /* 表头背景色 */
+  color: white; /* 表头文字颜色 */
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2; /* 每隔一行的背景色 */
+}
+
+table tr:hover {
+  background-color: #ddd; /* 鼠标悬停时的背景色 */
+}
+
+table caption {
+  font-size: 1.2em;
+  margin: 10px 0;
+  font-weight: bold;
 }

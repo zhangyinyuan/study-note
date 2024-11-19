@@ -6,11 +6,11 @@
 
 `git reset` 右面可选{`--mixed, --hard`}, 两者有本质的区别. `--mixed`是**默认**的
 
-| 操作                              | `git reset --hard origin/master`                        | `git reset --mixed origin/master`                            |
+| 操作                              | git reset --hard origin/master                          | git reset --mixed origin/master                              |
 | --------------------------------- | ------------------------------------------------------- | ------------------------------------------------------------ |
-| **HEAD**                          | 重置为 `origin/master` 指向的提交                       | 重置为 `origin/master` 指向的提交                            |
-| **暂存区（staging area）**        | 重置为远程 `origin/master` 的状态，丢弃所有已暂存的更改 | 重置为远程 `origin/master` 的状态，丢弃所有已暂存的更改      |
-| **工作目录（working directory）** | 恢复为远程 `origin/master` 的状态，丢弃所有未提交的更改 | 保留本地修改，但将其恢复为“未暂存”状态，不会丢失工作目录中的更改 |
+| **HEAD**                          | 重置为 origin/master 指向的提交                         | 重置为 origin/master 指向的提交                            |
+| **暂存区（staging area）**        | 重置为远程 origin/master 的状态，丢弃所有已暂存的更改   | 重置为远程 origin/master 的状态，丢弃所有已暂存的更改      |
+| **工作目录（working directory）** | 恢复为远程 origin/master 的状态，丢弃所有未提交的更改 | 保留本地修改，但将其恢复为“未暂存”状态，不会丢失工作目录中的更改 |
 
 ### 两者的相同点:
 
