@@ -94,6 +94,34 @@ server {
 }
 ```
 
+添加一个http登录认证
+配置如下:
+```
+server {
+    listen 80; #侦听80端口，如果强制所有的访问都必须是HTTPs的，这行需要注销掉
+    server_name work;
+    client_max_body_size 1024m;
+    # 开启HSTS后能够提升到A+. SSL评估 https://myssl.com/
+    add_header Strict-Transport-Security "max-age=31536000";
+    
+    location / {
+        # 启用 HTTP Basic Authentication
+        auth_basic "Restricted Access";  # 提示信息
+        auth_basic_user_file /etc/nginx/.htpasswd;  # 指定存放用户名和密码的文件        
+	proxy_set_header HOST $host;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://host.docker.internal:3000;
+    }
+}
+```
+生成验证密码,保存在`/etc/nginx/.htpasswd`
+```
+htpasswd -c -b /etc/nginx/.htpasswd nguone AiQuaichei2Eer2C
+```
+
+
 ## 匹配进程的名字并且全部杀掉进程
 如杀掉所有kafka进程
 ```
