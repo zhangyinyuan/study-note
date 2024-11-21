@@ -6,6 +6,7 @@
     - [docker-composse.yml收录](./Linux/Docker/docker-composse.yml收录.md)
     - [docker-compose网络](./Linux/Docker/docker-compose网络.md)  
     - [docker常用操作记录](./Linux/Docker/docker常用操作记录.md)  
+    - [docker gitea搭建](./Linux/gitea搭建.md)
   - [Fail2Ban实战](./Linux/Fail2Ban实战.md)
   - [Linux常用](./Linux/Linux常用.md)
   - [网络知识积累](./Linux/网络知识积累.md)
