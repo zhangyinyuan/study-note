@@ -43,7 +43,7 @@ vi /data/gitea/conf/app.ini
 gitea 默认使用3071长度的ssh key拉取项目.所以Windows或者Linux默认的2048无法使用.
 
 #### 生成3071长度的密钥
-> 3071 位长的 RSA 密钥
+> 3071 表示 位长的 RSA 密钥
 
 ```
 ssh-keygen -t rsa -b 3071 
