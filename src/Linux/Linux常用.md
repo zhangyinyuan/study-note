@@ -117,6 +117,7 @@ server {
 }
 ```
 生成验证密码,保存在`/etc/nginx/.htpasswd`
+> 密码错误, 会导致nginx提示500错误
 ```
 htpasswd -c -b /etc/nginx/.htpasswd nguone AiQuaichei2Eer2C
 ```
