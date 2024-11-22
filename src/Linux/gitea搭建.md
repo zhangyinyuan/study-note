@@ -56,4 +56,4 @@ ssh-keygen -t rsa -b 3071
 ## 通过ssh拉取项目
 > 推荐搭建gitea的时候使用22端口
 - 使用22端口拉取项目 `git clone git@git服务器IP/项目组或者用户名/work-record.git`
-- 使用2222端口拉取项目 `ssh://git@git服务器IP:2222/项目组或者用户名/work-record.git`
+- 使用2222端口拉取项目 `git clone ssh://git@git服务器IP:2222/项目组或者用户名/work-record.git`

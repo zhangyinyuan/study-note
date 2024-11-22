@@ -40,3 +40,16 @@ table caption {
   margin: 10px 0;
   font-weight: bold;
 }
+
+/* 代码片段的背景设置 */
+.hljs {
+  background-color: #282c34 !important; /* 强制覆盖背景色 */
+  border-radius: 6px; /* 添加圆角 */
+  color: white !important;
+}
+
+/* 行内联代码块 */
+:not(pre):not(a) > .hljs {
+  color: white !important;
+  overflow-x: initial;
+}
