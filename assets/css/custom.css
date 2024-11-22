@@ -53,3 +53,9 @@ table caption {
   color: white !important;
   overflow-x: initial;
 }
+
+
+blockquote {
+  margin: 0px 0;
+  padding: 0 5px;
+}
