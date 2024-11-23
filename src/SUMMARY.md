@@ -18,6 +18,7 @@
   - [Linux创建完整用户](./Linux/Linux创建完整用户.md)
   - [Linux历史记录](./Linux/Linux历史记录.md)
   - [Linux代理搭建和使用](./Linux/Linux代理搭建和使用.md)
+  - [软路由](./Linux/软路由/软路由安装.md)
 - [自考](./自考/README.md)
   - [离散数学](./自考/离散数学/README.md)
     - [错题记录](./自考/离散数学/错题记录.md) 
