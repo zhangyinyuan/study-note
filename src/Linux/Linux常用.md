@@ -155,3 +155,19 @@ exec bash
 echo "export PS1='[\u@\h \W]\$ '" >> ~/.bashrc && exec bash
 ```
 
+## 端口扫描
+### 安装
+```shell
+sudo apt-get install nmap   # Debian/Ubuntu 系统
+sudo yum install nmap       # CentOS/Red Hat 系统
+```
+
+### 扫描单个主机
+```shell
+nmap -sT 192.168.1.1
+```
+
+### 扫描整个网段
+```shell
+nmap -p 1-65535 192.168.1.0/24
+```
