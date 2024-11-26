@@ -18,11 +18,8 @@
   - [Linux创建完整用户](./Linux/Linux创建完整用户.md)
   - [Linux历史记录](./Linux/Linux历史记录.md)
   - [Linux代理搭建和使用](./Linux/Linux代理搭建和使用.md)
-<<<<<<< HEAD
   - [自签证书](./Linux/自签证书.md)
-=======
   - [软路由](./Linux/软路由/软路由安装.md)
->>>>>>> c16ea2eaaf6628e9a007740b3d19ec8c1325fdb3
 - [自考](./自考/README.md)
   - [离散数学](./自考/离散数学/README.md)
     - [错题记录](./自考/离散数学/错题记录.md) 
@@ -66,3 +63,4 @@
     - [Stream之map](./Java/Java8StreamAPI/map.md)
 - [小技巧](./小技巧.md)
 - [Git操作](./Git/Git常用操作.md)
+- [再不努力就老了](./再不努力就老了/README.md)
