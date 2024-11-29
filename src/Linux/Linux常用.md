@@ -171,3 +171,10 @@ nmap -sT 192.168.1.1
 ```shell
 nmap -p 1-65535 192.168.1.0/24
 ```
+
+### 查看硬盘类型
+```shell
+cat /sys/block/sda/queue/rotational
+#如果输出是 1，则表示该磁盘是 旋转硬盘（HDD）。
+#如果输出是 0，则表示该磁盘是 固态硬盘（SSD）。
+```
