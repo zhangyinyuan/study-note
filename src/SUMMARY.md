@@ -8,6 +8,7 @@
     - [docker常用操作记录](./Linux/Docker/docker常用操作记录.md)  
     - [docker gitea搭建](./Linux/gitea搭建.md)
     - [docker anylink搭建](./Linux/anylink搭建.md)
+    - [docker-compose搭建Nextcloud](./Linux/Docker/docker-compose搭建Nextcloud.md)
   - [Fail2Ban实战](./Linux/Fail2Ban实战.md)
   - [Linux常用](./Linux/Linux常用.md)
   - [网络知识积累](./Linux/网络知识积累.md)

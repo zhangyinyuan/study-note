@@ -39,4 +39,25 @@ volumes:
   ),
 ```
 
+## 赋予权限
+```shell
+docker exec -it nextcloud bash
+chown -R www-data:www-data /var/www/html/config
+chmod -R 755 /var/www/html/config
+chown www-data:www-data /var/www/html/config/config.php
+chmod 644 /var/www/html/config/config.php
+
+```
+
 然后使用Nginx转发即可, 最后重启Nginx,即可完成https访问.可以参考**[Linux常用技巧](../Linux常用.md)**篇的**Nginx https配置**
+
+## 彻底删除
+
+```shell
+docker rm -f nextcloud
+docker volume ls
+docker volume rm nextcloud_data
+rm -rf ./nextcloud_data
+docker rmi nextcloud:latest
+```
+
