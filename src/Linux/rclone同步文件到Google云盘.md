@@ -86,8 +86,8 @@ cd / && tar -zcvf app.tar.gz /app/ && mv app.tar.gz /google_drive_local/
 执行```crontab -e```打开定时任务配置文件,
 增加以下内容
 ```shell
-#8小时同步一次
-0 */8 * * * /usr/local/bin/vps_backup
+#12小时同步一次
+0  */12 * * *  /usr/local/bin/vps_backup
 ```
 
 ```shell
