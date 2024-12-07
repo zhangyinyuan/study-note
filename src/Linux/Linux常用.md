@@ -178,3 +178,8 @@ cat /sys/block/sda/queue/rotational
 #如果输出是 1，则表示该磁盘是 旋转硬盘（HDD）。
 #如果输出是 0，则表示该磁盘是 固态硬盘（SSD）。
 ```
+
+### 查看所有自启服务列表
+```shell
+systemctl list-units --type=service
+```
