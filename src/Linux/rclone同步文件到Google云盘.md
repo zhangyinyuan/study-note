@@ -95,3 +95,8 @@ cd / && tar -zcvf app.tar.gz /app/ && mv app.tar.gz /google_drive_local/
 */30 * * * *  /usr/local/bin/vps_backup
 ```
 
+## 查看所有的rclone配置
+```shell
+rclone config show
+```
+
