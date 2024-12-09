@@ -39,7 +39,6 @@ docker-compose up -d
 ```shell
 vim data/jail.d/sshd.conf
 #内容如下
- mkdir -p data/jail.d
 cat <<EOF > data/jail.d/sshd.conf
 [sshd]
 enabled = true

@@ -1,4 +1,17 @@
 # 基于阿里云盘webdav实现owncloud双备份
+
+## 创建目录
+
+```shell
+mkdir -p /app/docker/aliyundrive-webdav
+```
+
+## 创建docker-compose.yml
+
+```shell
+cd /app/docker/aliyundrive-webdav && nano docker-compose.yml
+```
+
 ```shell
 version: '3.8'
 services:
@@ -15,8 +28,10 @@ services:
     env_file:
       - .env 
 ```
-nano .env
+
+## .env
 ```shell
+nano .env
 REFRESH_TOKEN=xxxx改成自己的token
 ```
 
@@ -43,9 +58,14 @@ nohup rclone mount aliyun_drive:/ /aliyun_drive_local --vfs-cache-mode writes >>
 
 ## 安装inotify，用于监听owncloud文件变化
 ```shell
+sudo apt update
+sudo apt install inotify-tools
 ```
 ## 配置脚本sync_with_inotify.sh
-nano /app/sync_with_inotify.sh
+> `nano /app/sync_with_inotify.sh`
+
+> 通过 `inotifywait` 实现对指定目录的实时监控，一旦检测到文件的创建、修改、删除或移动事件，就会触发 `rclone sync` 命令，将本地目录同步到远程存储（如阿里云盘）。它还包含一些优化措施，例如延迟处理、避免重复触发等
+
 ```shell
 #!/bin/bash
 
@@ -76,7 +96,29 @@ while read -r directory events filename; do
 done
 ```
 
+- **命令解释**：
+
+  - `-m`：开启持续监控模式。
+
+  - `-r`：递归监听子目录中的变化。
+
+  - ```
+    -e create,modify,delete,move
+    ```
+
+    ：监听以下事件：
+
+    - `create`：文件或目录的创建。
+    - `modify`：文件内容的修改。
+    - `delete`：文件或目录的删除。
+    - `move`：文件或目录的移动或重命名。
+
+  - `"$LOCAL_DIR"`：指定要监听的目录。
+
+  **功能**：当监控的目录中发生指定的事件时，将事件信息通过管道传递到 `while` 循环中。
+
 ## 添加执行权限
+
 ```shell
 chmod +x /app/sync_with_inotify.sh
 ```
@@ -137,3 +179,4 @@ tail -f /tmp/rclone_owncloud.log
 ```shell
 fusermount -uz /aliyun_drive_local
 ```
+
