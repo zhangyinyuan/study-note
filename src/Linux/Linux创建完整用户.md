@@ -75,8 +75,7 @@ sudo usermod -aG docker myuser
 - 完全退出并重新登录
 - newgrp docker
 
-
-
-
-
-
+## 删除一个用户
+```shell
+sudo userdel -r xxxx
+```
