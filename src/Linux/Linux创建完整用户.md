@@ -2,7 +2,7 @@
 ## 创建用户
 - 创建用户
 ```
-sudo useradd myuser
+sudo useradd -m -s /bin/bash myuser
 ```
 
 - 设置用户密码
