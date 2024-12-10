@@ -192,3 +192,8 @@ cat /etc/os-release
 # alpine 安装telnet
 apk add busybox-extras
 ```
+
+### grafana 重置admin密码
+```shell
+grafana-cli admin reset-admin-password <new password>
+```
