@@ -183,3 +183,12 @@ cat /sys/block/sda/queue/rotational
 ```shell
 systemctl list-units --type=service
 ```
+
+### docker 容器安装telnet
+```shell
+# 查看操作系统信息
+cat /etc/os-release
+
+# alpine 安装telnet
+apk add busybox-extras
+```
