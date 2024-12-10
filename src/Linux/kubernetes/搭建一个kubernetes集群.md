@@ -39,7 +39,15 @@ sudo install -o root -g root -m 0755 kubectl-convert /usr/local/bin/kubectl-conv
 rm kubectl-convert kubectl-convert.sha256
 ```
 
-## 安装集群
+## 安装集群:开发/测试环境
+
+### 硬件要求
+
+- 2 个或更多 CPU
+- 2GB 可用内存
+- 20GB 可用磁盘空间
+- 互联网连接
+- 容器或虚拟机管理器，例如：[Docker](https://minikube.sigs.k8s.io/docs/drivers/docker/)、[QEMU](https://minikube.sigs.k8s.io/docs/drivers/qemu/)、[Hyperkit](https://minikube.sigs.k8s.io/docs/drivers/hyperkit/)、[Hyper-V](https://minikube.sigs.k8s.io/docs/drivers/hyperv/)、[KVM](https://minikube.sigs.k8s.io/docs/drivers/kvm2/)、[Parallels](https://minikube.sigs.k8s.io/docs/drivers/parallels/)、[Podman](https://minikube.sigs.k8s.io/docs/drivers/podman/)、[VirtualBox](https://minikube.sigs.k8s.io/docs/drivers/virtualbox/)或[VMware Fusion/Workstation](https://minikube.sigs.k8s.io/docs/drivers/vmware/)
 
 ### 安装minikube 
 
@@ -86,5 +94,34 @@ minikube start
 * Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
 ```
 
+## 安装集群:生产环境
 
+安装netcat-openbsd
+
+```shell
+apt update && apt install netcat-openbsd -y
+
+# 用于直观地看端口是否启用
+root@tw:~# nc 127.0.0.1 443 -v
+Connection to 127.0.0.1 443 port [tcp/https] succeeded!
+```
+
+### [安装 kubeadm](https://kubernetes.io/zh-cn/docs/setup/production-environment/tools/kubeadm/install-kubeadm/)
+
+```shell
+sudo apt-get update
+# apt-transport-https 可能是一个虚拟包（dummy package）；如果是的话，你可以跳过安装这个包
+sudo apt-get install -y apt-transport-https ca-certificates curl gpg
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
+```
+
+
+
+```shell
+kubeadm init --control-plane-endpoint "loadbalancer.nguone.eu.org" --ignore-preflight-errors=Port-6443,Port-10259,Port-10257,Port-10250,Port-2379,Port-2380,FileAvailable--etc-kubernetes-manifests-kube-apiserver.yaml,FileAvailable--etc-kubernetes-manifests-kube-controller-manager.yaml,FileAvailable--etc-kubernetes-manifests-kube-scheduler.yaml,FileAvailable--etc-kubernetes-manifests-etcd.yaml,DirAvailable--var-lib-etcd
+```
 
