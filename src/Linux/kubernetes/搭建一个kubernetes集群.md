@@ -279,6 +279,14 @@ kubectl logs -n cattle-system -l app=rancher --follow
 
 ### helm安装的rancher重置admin密码
 
+```shell
+cp /root/.kube/config .
+KUBECONFIG=./config
+kubectl --kubeconfig $KUBECONFIG -n cattle-system exec $(kubectl --kubeconfig $KUBECONFIG -n cattle-system get pods -l app=rancher --no-headers | head -1 | awk '{ print $1 }') -c rancher -- reset-password
+```
+
+
+
 ` kubectl get svc --namespace default`等价于 `kubectl get svc --namespace default`
 
 
