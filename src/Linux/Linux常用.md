@@ -122,8 +122,26 @@ server {
 htpasswd -c -b /etc/nginx/.htpasswd nguone AiQuaichei2Eer2C
 ```
 
+### location
+
+```shell
+location = /abc {
+    add_header Content-Type text/plain;
+    add_header X-Server-IP $server_addr always;
+
+    return 200 'Success';
+}
+```
+
+解释:
+
+- `location = /abc`：表示精确匹配 `/abc`，只有请求的 URI 正好是 `/abc` 时才会匹配这个块.其他以 `/abc/` 开头的路径（比如 `/abc/jlljlk`）将不会匹配这个配置,将会返回404
+- 如果设置为`/abc`,那么访问`/abc`以及`/abc`开头的任何路径都会当做`/abc`处理
+- `add_header Content-Type text/plain` 表示返回的信息是纯文本
+- `add_header X-Server-IP $server_addr always` 强制在响应头信息中返回**nginx**的**IP**
 
 ## 匹配进程的名字并且全部杀掉进程
+
 如杀掉所有kafka进程
 ```
 pgrep -f kafka | xargs kill -9

@@ -26,6 +26,7 @@
   - [自签证书](./Linux/自签证书.md)
   - [软路由](./Linux/软路由/软路由安装.md)
   - [K8s](./Linux/kubernetes/README.md)
+    - [搭建一个kubernetes集群](./Linux/kubernetes/搭建一个kubernetes集群.md)
 - [自考](./自考/README.md)
   - [离散数学](./自考/离散数学/README.md)
     - [错题记录](./自考/离散数学/错题记录.md) 
