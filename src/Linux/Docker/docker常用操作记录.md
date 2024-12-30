@@ -1,5 +1,21 @@
 # docker常用操作记录
 
+## 禁止docker创建容器时自动开放端口
+```
+sudo tee /etc/docker/daemon.json <<EOF
+{
+  "iptables": false
+}
+EOF
+systemctl restart docker
+```
+
+## ufw放行vps内网IP访问所有端口
+```shell
+sudo ufw allow from $(hostname -I | awk '{print $1}') to any comment "允许宿主机的内网UP"
+ufw reload
+```
+
 ## 容器中执行apt update报错
 解决办法
 ```
