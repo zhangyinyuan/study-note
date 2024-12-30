@@ -54,7 +54,7 @@ EOF
 
 ## 重启启动
 ```shell
-docker-compose up -d
+docker-compose restart
 ```
 
 ## 查看被ban的记录

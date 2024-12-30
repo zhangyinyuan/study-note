@@ -248,3 +248,4 @@ kubectl apply -f nginx-test-pod.yaml
 
 ```
 
+让其他节点加入到
