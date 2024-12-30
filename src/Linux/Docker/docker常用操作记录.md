@@ -10,10 +10,10 @@ EOF
 systemctl restart docker
 ```
 
-## ufw放行vps内网IP访问所有端口
+## ufw允许nginx容器访问所有端口
+> 用于ngix做负载均衡、转发
 ```shell
-sudo ufw allow from $(hostname -I | awk '{print $1}') to any comment "允许宿主机的内网UP"
-ufw reload
+sudo ufw allow from $(docker inspect nginx | grep '"IPv4Address"' | awk -F '": "' '{print $2}' | tr -d '",') to any comment "允许nginx容器访问所有端口"
 ```
 
 ## 容器中执行apt update报错
