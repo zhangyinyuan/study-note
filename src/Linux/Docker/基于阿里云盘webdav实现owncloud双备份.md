@@ -56,6 +56,32 @@ rclone config
 mkdir /aliyun_drive_local && nohup rclone mount aliyun_drive:/ /aliyun_drive_local --vfs-cache-mode writes >> /tmp/aliyun_drive_local.log 2>&1 &
 ```
 
+## 开机自动挂载
+```shell
+sudo nano /etc/systemd/system/rclone-mount.service
+
+[Unit]
+Description=Mount Aliyun Drive with Rclone
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/rclone mount aliyun_drive:/ /aliyun_drive_local --vfs-cache-mode writes
+ExecStop=/bin/fusermount -u /aliyun_drive_local
+Restart=on-failure
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
+```shell
+sudo systemctl daemon-reload
+sudo systemctl restart rclone-mount.service
+```
+
 ## 安装inotify，用于监听owncloud文件变化
 ```shell
 sudo apt update
