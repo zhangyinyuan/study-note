@@ -53,7 +53,7 @@ rclone config
 ## 挂载
 > 假如上面配置的阿里云盘名叫aliyun_drive
 ```shell
-nohup rclone mount aliyun_drive:/ /aliyun_drive_local --vfs-cache-mode writes >> /tmp/aliyun_drive_local.log 2>&1 &
+mkdir /aliyun_drive_local && nohup rclone mount aliyun_drive:/ /aliyun_drive_local --vfs-cache-mode writes >> /tmp/aliyun_drive_local.log 2>&1 &
 ```
 
 ## 安装inotify，用于监听owncloud文件变化
