@@ -75,6 +75,10 @@ Status for the jail: sshd
    `- Banned IP list:	123.58.207.155 92.255.85.107 92.255.85.253
 ```
 
+## 解封IP
+```shell
+docker exec fail2ban fail2ban-client set sshd unbanip 1.1.1.1
+```
 
 
 
