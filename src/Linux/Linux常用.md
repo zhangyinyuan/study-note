@@ -231,3 +231,8 @@ find / -not -path "/proc/*" -name "*.jar" -print
 **权限限制**：某些 `/proc` 目录下的文件和进程信息只有 `root` 用户或进程的所有者才能访问，普通用户会遇到 `Permission denied` 错误。
 
 **解决方法**：使用 `-prune` 排除 `/proc` 目录，避免遍历该目录时出现权限问题。
+
+## debian设置上海时区
+```shell
+sudo timedatectl set-timezone Asia/Shanghai
+```
