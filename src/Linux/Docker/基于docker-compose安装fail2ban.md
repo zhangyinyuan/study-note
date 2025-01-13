@@ -80,5 +80,8 @@ Status for the jail: sshd
 docker exec fail2ban fail2ban-client set sshd unbanip 1.1.1.1
 ```
 
-
+## ban一个ip
+```shell
+docker exec fail2ban fail2ban-client set sshd banip 103.167.64.9
+```
 
