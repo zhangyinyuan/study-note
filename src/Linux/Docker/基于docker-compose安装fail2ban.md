@@ -89,3 +89,23 @@ docker exec fail2ban fail2ban-client set sshd banip 103.167.64.9
 ```shell
 grep -E '/bin/bash|/bin/zsh' /etc/passwd
 ```
+
+## 显示当前登录到系统的用户信息
+```shell
+who
+```
+
+## 显示系统中所有的登录和注销记录
+```shell
+last
+```
+
+### who 与 last 的区别：
+who：显示当前系统中正在登录的用户。
+
+实时信息，反映当前在线的用户。
+不包括注销的历史记录。
+last：显示所有的登录和注销历史记录。
+
+包括历史记录，反映所有曾经登录过的用户（包括已注销的）。
+可以查看每个用户的登录时长和注销信息。
