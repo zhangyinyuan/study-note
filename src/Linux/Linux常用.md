@@ -236,3 +236,18 @@ find / -not -path "/proc/*" -name "*.jar" -print
 ```shell
 sudo timedatectl set-timezone Asia/Shanghai
 ```
+
+## 容器内运行arthas防止挂断
+```shell
+# 在openjdk8环境下运行 出现问题的解决方案
+# export PATH=$PATH:/usr/lib/jvm/java-1.8-openjdk/bin
+
+pid=1 ;\
+touch /proc/${pid}/cwd/.attach_pid${pid} && \
+  kill -SIGQUIT ${pid} && \
+  sleep 2 &&
+  ls /proc/${pid}/root/tmp/.java_pid${pid}
+
+curl -sL https://arthas.aliyun.com/arthas-lite-boot.jar
+java -jar arthas-boot.jar  
+```
