@@ -251,3 +251,26 @@ touch /proc/${pid}/cwd/.attach_pid${pid} && \
 curl -sL https://arthas.aliyun.com/arthas-lite-boot.jar
 java -jar arthas-boot.jar  
 ```
+
+## windows 多块网卡切换
+### 检查路由表
+```shell
+route print
+```
+
+### 删除 WLAN（无线网卡）的默认路由
+```shell
+route delete 0.0.0.0 mask 0.0.0.0 172.20.10.1 if 14
+```
+
+### 删除以太网（Realtek PCIe GbE）的默认路由
+```shell
+route delete 0.0.0.0 mask 0.0.0.0 10.99.95.254
+```
+
+### 恢复默认路由
+```shell
+route add 0.0.0.0 mask 0.0.0.0 10.99.95.254 if 20 -p
+```
+
+
