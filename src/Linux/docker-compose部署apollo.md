@@ -10,7 +10,7 @@ mkdir -p /app/docker/apollo
 tree
 ```
 
-`
+```bash
 .
 ├── docker-compose.yml
 └── sql
@@ -20,7 +20,8 @@ tree
     └── 04-init-eureka-url.sql
 
 2 directories, 5 files
-`
+```
+
 - 01-apolloconfigdb.sql 文件内容
 ```
 services:
