@@ -156,3 +156,4 @@ docekr-compose up -d
 ```
 
 - 访问 http://localhost:8070
+> 默认登录账户 apollo/admin, 尽快修改密码
