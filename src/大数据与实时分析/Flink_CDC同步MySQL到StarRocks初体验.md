@@ -218,3 +218,6 @@ SHOW VARIABLES LIKE 'log_bin';
 SELECT @@global.time_zone, @@session.time_zone;
 ```
 
+不要直接修改my.cnf , 从容器中在/etc/mysql看到my.cnf来自于`my.cnf -> /etc/alternatives/my.cnf`
+
+配置在`mariadb.conf.d`下新增或修改
