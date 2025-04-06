@@ -197,3 +197,24 @@ from
 
   - 退出容器,并且重启即可  `docker restart mariadb`
 
+## 其他
+
+### 停止所有的flink, 慎用
+
+```bash
+jps -l | grep -i flink | awk '{print $1}' | xargs kill -9
+```
+
+### MySQL相关
+
+```sql
+-- 确认 binlog_format 已改为 ROW
+SHOW VARIABLES LIKE 'binlog_format';
+
+--是否开启binlog
+SHOW VARIABLES LIKE 'log_bin';
+
+-- 查看时区
+SELECT @@global.time_zone, @@session.time_zone;
+```
+
