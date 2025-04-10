@@ -68,7 +68,7 @@ docker-compose up -d
 
 ```bash
 docker run -itd --network=nginx_ngu_network \
- --name dinky dinkydocker/dinky-standalone-server:1.2.3-flink1.19
+ --name dinky dinkydocker/dinky-standalone-server:1.1.0-flink1.18
 ```
 
 ### dinky配置
