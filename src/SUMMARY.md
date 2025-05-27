@@ -90,7 +90,6 @@
     - [Stream之map](./Java/Java8StreamAPI/map.md)
 - [小技巧](./小技巧.md)
 - [Git操作](./Git/Git常用操作.md)
-- [再不努力就老了](./再不努力就老了/README.md)
 - [云服务](./云服务/README.md)
   - [数据服务](./云服务/数据服务/README.md)
     - [API安全](./云服务/数据服务/API安全.md)
