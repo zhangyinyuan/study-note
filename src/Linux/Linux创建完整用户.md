@@ -14,7 +14,11 @@ sudo passwd myuser
 ## 给用户赋予sudo权限
 - 添加用户到 sudo 组
 ```
+# CentOS
 sudo usermod -aG wheel myuser
+
+# Debian
+sudo usermod -aG sudo myuser
 ```
 
 ## wheel组的用 配置无密码 sudo 权限
@@ -29,7 +33,11 @@ sudo visudo
 ## 指定用户,配置无密码执行sudo权限
 新增一行
 ```
-myuser ALL=(ALL) NOPASSWD: /bin/chmod
+# 指定用户不需要输入密码，执行sudo, 比如sudo -i 或者 sudo su - root
+myuser ALL=(ALL) NOPASSWD:ALL
+
+# 指定用户不需要输入密码,仅限于执行/bin/chmod
+# myuser ALL=(ALL) NOPASSWD: /bin/chmod
 ```
 
 ## 其他辅助性命令
@@ -65,7 +73,7 @@ groups
 - 使用 getent 命令检查特定组
 ```
 getent group docker
-``` 
+```
 
 - 将用户添加到 docker 组
 ```
