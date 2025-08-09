@@ -125,3 +125,13 @@ last
 `last` → 从 `/var/log/wtmp` 读取历史成功登录记录
 
 `lastb` → 从 `/var/log/btmp` 读取失败登录记录（爆破痕迹）
+
+## 检查是否被爆破成功（成功登录记录）
+
+关键是找 **"Accepted password"** 或 **"Accepted publickey"**，看是否有陌生 IP。
+
+```shell
+# 最近成功登录
+sudo grep "Accepted" /var/log/auth.log | tail -n 50
+```
+
