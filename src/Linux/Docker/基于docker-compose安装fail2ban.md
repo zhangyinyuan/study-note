@@ -135,3 +135,13 @@ last
 sudo grep "Accepted" /var/log/auth.log | tail -n 50
 ```
 
+## 更换ssh默认端口
+
+```shell
+sudo sed -i 's/^#Port .*/Port 50022/; s/^Port .*/Port 50022/' /etc/ssh/sshd_config
+ufw allow 50022/tcp comment "ssh"
+ufw delete allow ssh
+ufw reload
+systemctl restart sshd
+```
+
