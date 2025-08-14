@@ -14,7 +14,11 @@ sudo passwd myuser
 ## 给用户赋予sudo权限
 - 添加用户到 sudo 组
 ```
+# CentOS
 sudo usermod -aG wheel myuser
+
+# Debian
+sudo usermod -aG sudo myuser
 ```
 
 ## wheel组的用 配置无密码 sudo 权限
@@ -29,10 +33,23 @@ sudo visudo
 ## 指定用户,配置无密码执行sudo权限
 新增一行
 ```
-myuser ALL=(ALL) NOPASSWD: /bin/chmod
+# 指定用户不需要输入密码，执行sudo, 比如sudo -i 或者 sudo su - root
+myuser ALL=(ALL) NOPASSWD:ALL
+
+# 指定用户不需要输入密码,仅限于执行/bin/chmod
+# myuser ALL=(ALL) NOPASSWD: /bin/chmod
+```
+
+## `ssh-keygen` 生成最新的密钥对
+
+`ssh-keygen` 生成最新的密钥对，通常建议使用 **Ed25519** 算法，因为它安全、速度快且体积小，是当前推荐的现代密钥类型
+
+```shell
+ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
 
 ## 其他辅助性命令
+
 - 查看所有用户
 ```
 cat /etc/passwd
@@ -65,7 +82,7 @@ groups
 - 使用 getent 命令检查特定组
 ```
 getent group docker
-``` 
+```
 
 - 将用户添加到 docker 组
 ```
@@ -79,3 +96,31 @@ sudo usermod -aG docker myuser
 ```shell
 sudo userdel -r xxxx
 ```
+
+## 禁用root执行ssh 
+
+> 谨慎操作，操作前至少要保证有1个非root用户可以正常ssh登录
+
+```shell
+vim /etc/ssh/sshd_config
+```
+
+末尾追加
+
+```properties
+# 只允许 myuser 用户登录，其他所有用户都会被拒绝
+AllowUsers myuser
+```
+
+重启sshd
+
+```shell
+sudo systemctl restart sshd
+```
+
+此时再用root登录就会看到
+
+```log
+2025-08-09T07:32:11.673498+08:00 xxxx sshd[1390595]: User root from 111.119.221.153 not allowed because not listed in AllowUsers
+```
+
