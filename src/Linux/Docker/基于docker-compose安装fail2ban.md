@@ -37,7 +37,6 @@ docker-compose up -d
 
 ## 配置SSH规则
 ```shell
-vim data/jail.d/sshd.conf
 #内容如下
 cat <<EOF > data/jail.d/sshd.conf
 [sshd]
