@@ -248,8 +248,8 @@ touch /proc/${pid}/cwd/.attach_pid${pid} && \
   sleep 2 &&
   ls /proc/${pid}/root/tmp/.java_pid${pid}
 
-curl -sL https://arthas.aliyun.com/arthas-lite-boot.jar
-java -jar arthas-boot.jar  
+curl -O https://arthas.aliyun.com/arthas-boot.jar
+java -jar arthas-boot.jar
 ```
 
 ## windows 多块网卡切换
@@ -272,5 +272,4 @@ route delete 0.0.0.0 mask 0.0.0.0 10.99.95.254
 ```shell
 route add 0.0.0.0 mask 0.0.0.0 10.99.95.254 if 20 -p
 ```
-
 
