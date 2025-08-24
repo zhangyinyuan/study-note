@@ -15,58 +15,35 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
-    env:
-      MDBOOK_VERSION: 0.4.36
     steps:
-      # Checkout the repository
+      # 拉取源码
       - uses: actions/checkout@v4
 
-      # Cache Cargo registry and Git dependencies
-      - name: Cache Cargo registry
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.cargo/registry
-            ~/.cargo/git
-          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.toml') }}
-          restore-keys: |
-            ${{ runner.os }}-cargo-
-
-      # Cache mdBook installation
-      - name: Cache mdBook
-        uses: actions/cache@v3
-        with:
-          path: ~/.cargo/bin/mdbook
-          key: ${{ runner.os }}-mdbook-${{ env.MDBOOK_VERSION }}
-          restore-keys: |
-            ${{ runner.os }}-mdbook-
-
-      # Install Rust toolchain and mdBook
-      - name: Install mdBook
+      # 下载你 release 里的 Linux 版 mdBook
+      - name: Install mdBook (Chinese search fork)
         run: |
-          curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
-          rustup update
-          cargo install mdbook --git https://github.com/Sunshine40/mdBook --branch search-non-english --force
+          curl -L -o mdbook https://github.com/zhangyinyuan/mdBook/releases/download/auto-build/mdbook
+          chmod +x mdbook
+          sudo mv mdbook /usr/local/bin/
+          mdbook --version   # 打印一下确认用的就是你的版本
 
-      # Setup GitHub Pages configuration
+      # GitHub Pages 配置
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
 
-      # Build mdBook
+      # 构建网站
       - name: Build with mdBook
         run: mdbook build
 
-      # Upload the built artifact
+      # 上传构建产物
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./docs
+          path: ./docs   # ⚠️ 这里改成你实际的 mdBook 输出目录
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages
