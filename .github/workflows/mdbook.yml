@@ -24,7 +24,7 @@ jobs:
       # 下载你 release 里的 Linux 版 mdBook
       - name: Install mdBook (Chinese search fork)
         run: |
-          curl -L -o mdbook https://github.com/zhangyinyuan/mdBook/releases/download/auto-build/mdbook
+          curl -L -o mdbook https://github.com/zhangyinyuan/mdBook/releases/download/auto-build/mdbook-linux
           chmod +x mdbook
           sudo mv mdbook /usr/local/bin/
           mdbook --version   # 打印一下确认用的就是你的版本
