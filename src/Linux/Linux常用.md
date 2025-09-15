@@ -273,3 +273,9 @@ route delete 0.0.0.0 mask 0.0.0.0 10.99.95.254
 route add 0.0.0.0 mask 0.0.0.0 10.99.95.254 if 20 -p
 ```
 
+## 设置上海时区
+
+```shell
+sudo timedatectl set-timezone Asia/Shanghai
+```
+
