@@ -103,3 +103,7 @@
 - [未命名空间]()
   - [mdbook使用记录](./未命名空间/mdbook使用记录.md)
   - [clash-verge](./未命名空间/clash-verge.md)
+- [工具使用]()
+  - [idea]()
+    - [禁止idea粘贴文本自动格式化](./工具使用/idea/禁止idea粘贴文本自动格式化.md)
+
