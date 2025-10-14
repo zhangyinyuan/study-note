@@ -144,3 +144,27 @@ ufw reload
 systemctl restart sshd
 ```
 
+## 允许指定的用户SSH
+
+编辑`vim /etc/ssh/sshd_config`
+
+```shell
+
+# 只允许 root 用户登录，其他所有用户都会被拒绝
+AllowUsers root
+```
+
+重启sshd
+
+```shell
+systemctl restart sshd
+```
+
+## 排查ssh不成功的原因
+
+```shell
+tail -f  /var/log/auth.log 
+
+tail -n 40 /var/log/auth.log | grep sshd
+```
+
