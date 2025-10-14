@@ -84,7 +84,14 @@ docker exec fail2ban fail2ban-client set sshd unbanip 1.1.1.1
 docker exec fail2ban fail2ban-client set sshd banip 103.167.64.9
 ```
 
+## 解封所有
+
+```shell
+docker exec -it $(docker ps -q --filter name=fail2ban) fail2ban-client unban --all
+```
+
 ## 查看有效的登录用户
+
 ```shell
 grep -E '/bin/bash|/bin/zsh' /etc/passwd
 ```
