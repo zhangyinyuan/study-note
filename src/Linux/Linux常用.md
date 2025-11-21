@@ -279,3 +279,27 @@ route add 0.0.0.0 mask 0.0.0.0 10.99.95.254 if 20 -p
 sudo timedatectl set-timezone Asia/Shanghai
 ```
 
+## **查看磁盘使用情况**
+
+```shell
+df -h /
+```
+
+## **开启4G的内存缓冲区**
+
+```shell
+sudo fallocate -l 4G /swapfile && \
+
+sudo chmod 600 /swapfile && \
+
+sudo mkswap /swapfile && \
+
+sudo swapon /swapfile && \
+
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab && \
+
+sudo sysctl vm.swappiness=10 && \
+
+echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf
+```
+
